@@ -1,0 +1,15 @@
+{
+  "name": "hms",
+  "version": "1.0.0",
+  "description": "this is a hotel management system",
+  "main": "backend.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "HMS"
+  },
+  "author": "Abraham John",
+  "license": "ISC"
+}
