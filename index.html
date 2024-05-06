@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel Management Website</title>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#booking">Booking</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Home Section -->
+<section id="home">
+  <h1>Welcome to Our Hotel</h1>
+  <p>Enjoy a luxury experience with us.</p>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <h2>About Us</h2>
+  <p>Learn more about our history and values.</p>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+  <h2>Our Services</h2>
+  <p>Discover the variety of services we offer.</p>
+</section>
+
+<!-- Booking Form -->
+<section id="booking">
+  <h2>Book Your Stay</h2>
+  <form action="/submit-booking" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="checkin">Check-in Date:</label>
+    <input type="date" id="checkin" name="checkin" required>
+    
+    <label for="checkout">Check-out Date:</label>
+    <input type="date" id="checkout" name="checkout" required>
+    
+    <label for="room">Room Type:</label>
+    <select id="room" name="room">
+      <option value="single">Single</option>
+      <option value="double">Double</option>
+      <option value="suite">Suite</option>
+    </select>
+    
+    <input type="submit" value="Book Now">
+  </form>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>If you have any questions, please reach out to us.</p>
+</section>
+
+</body>
+</html>
+
