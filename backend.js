@@ -86,13 +86,13 @@ const roomSchema = new mongoose.Schema({
     type: String,
     price: Number,
     available: Boolean
-  });
+});
   
   // Room Model
-  const Room = mongoose.model('Room', roomSchema);
+const Room = mongoose.model('Room', roomSchema);
   
   // Booking Endpoint
-  app.post('/book-room', async (req, res) => {
+app.post('/book-room', async (req, res) => {
     try {
       const { roomType, checkInDate, checkOutDate } = req.body;
       // Logic to check room availability and make a booking
@@ -101,5 +101,33 @@ const roomSchema = new mongoose.Schema({
     } catch (error) {
       res.status(500).send('Error booking room');
     }
-  });
+});
   
+  // Admin Panel Endpoints
+app.get('/admin/rooms', adminController.listRooms);
+app.post('/admin/rooms', adminController.createRoom);
+app.put('/admin/rooms/:id', adminController.updateRoom);
+app.delete('/admin/rooms/:id', adminController.deleteRoom);
+
+app.get('/admin/bookings', adminController.listBookings);
+app.put('/admin/bookings/:id', adminController.updateBooking);
+app.delete('/admin/bookings/:id', adminController.deleteBooking);
+
+app.put('/admin/availability/:roomId', adminController.updateAvailability);
+
+// Payment Integration Endpoints
+app.post('/payment/initiate', paymentController.initiatePayment);
+app.post('/payment/verify', paymentController.verifyPayment);
+
+// Review System Endpoints
+app.post('/reviews', reviewController.submitReview);
+app.get('/reviews', reviewController.getReviews);
+
+// Special Offers and Promotions Endpoints
+app.get('/offers', offerController.listOffers);
+app.post('/offers', offerController.createOffer);
+
+// FAQ Management Endpoints
+app.get('/faq', faqController.listFAQs);
+app.put('/faq/:id', faqController.updateFAQ);
+app.delete('/faq/:id', faqController.deleteFAQ);
